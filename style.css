@@ -104,3 +104,40 @@ footer {
 .footer-links a:hover {
     background-color: #5E7CE2;
 }
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .sobre, section article {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links a {
+        margin: 6px 0;
+        width: 100%;
+        max-width: 250px;
+    }
+}
