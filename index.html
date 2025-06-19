@@ -12,6 +12,7 @@
 
 <body>
     <div class="container">
+
         <header>
             <h1>Bem-vindo ao meu site!</h1>
             <nav>
@@ -26,6 +27,7 @@
 
         <main>
             <section class="sobre">
+                <img src="images/profile-jin-woo.jpg" alt="perfil">
                 <h2>Sobre Mim</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, quasi. Distinctio possimus numquam fugiat impedit, doloremque id laboriosam illo reiciendis aliquam reprehenderit ratione ex iste consequatur itaque eveniet nam magni. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolore illum blanditiis provident maiores? Id, atque facere est culpa animi tenetur nostrum unde voluptatibus neque optio recusandae? Doloribus, dolor quasi? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur tempore in ipsa? Tenetur itaque voluptatum modi sunt excepturi ea saepe nostrum! Repellat commodi tenetur dignissimos nisi amet praesentium odit a?
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam necessitatibus iusto labore aliquam, sapiente aut tempore non maiores excepturi deserunt illum dicta sequi cumque. Quae qui unde numquam harum deserunt? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, eum praesentium. Odit iure quae molestias fugit culpa ut dolorum alias excepturi corporis consectetur, quam earum qui, vel sit a? Omnis!
@@ -36,7 +38,7 @@
                 <h2>Projetos</h2>
                 <article>
                     <h3>Projeto 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consectetur distinctio delectus sint expedita repellendus velit totam, commodi neque obcaecati ipsum dolorum, veniam accusantium facere soluta dolor provident ea sequi.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consectetur distinctio delectus sint expedita repellendus velit totam, commodi neque obcaecati ipsum dolorum, veniam accusantium facere soluta dolor provident ea sequi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, voluptatem consequuntur eveniet amet totam cupiditate. Recusandae blanditiis eos error culpa fugit. Beatae quasi provident accusamus harum cum libero qui distinctio. Lore</p>
                 </article>
                 <article>
                     <h3>Projeto 2</h3>
@@ -44,6 +46,22 @@
                 </article>
             </section>
         </main>
+
+           <section class="contato">
+                <form action="" method="post">
+
+                    <label for="nome">Nome:</label>
+                    <input name="nome" id="nome" type="text" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" required>
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea name="texto" id="mensagem" rows="5" required></textarea>
+
+                    <button type="submit">ENVIAR</button>
+                </form>
+           </section>
 
             <footer>
                 <div class="footer-links">
@@ -55,6 +73,14 @@
 
             </footer>
         </div>
-    </div>  
+    </div>
+    
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // impede que o formulário seja enviado de verdade (sem recarregar a página)
+            alert("Mensagem enviada com sucesso!"); //exibe a mensagem que você quiser.
+        });
+    </script>
+
 </body>
 </html>
