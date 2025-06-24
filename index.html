@@ -13,20 +13,22 @@
 <body>
     <div class="container">
 
-        <header>
-            <h1>Bem-vindo ao meu site!</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Projetos</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </nav>
-        </header>
+        <section id="inicio">
+            <header>
+                <h1>Bem-vindo ao meu site!</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio" class="scroll-link">Início</a></li>
+                        <li><a href="#sobre" class="scroll-link">Sobre</a></li>
+                        <li><a href="#projetos" class="scroll-link">Projetos</a></li>
+                        <li><a href="#contato" class="scroll-link"> Contato</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
 
         <main>
-            <section class="sobre">
+            <section id="sobre" class="sobre">
                 <img src="images/profile-jin-woo.jpg" alt="perfil">
                 <h2>Sobre Mim</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, quasi. Distinctio possimus numquam fugiat impedit, doloremque id laboriosam illo reiciendis aliquam reprehenderit ratione ex iste consequatur itaque eveniet nam magni. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolore illum blanditiis provident maiores? Id, atque facere est culpa animi tenetur nostrum unde voluptatibus neque optio recusandae? Doloribus, dolor quasi? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur tempore in ipsa? Tenetur itaque voluptatum modi sunt excepturi ea saepe nostrum! Repellat commodi tenetur dignissimos nisi amet praesentium odit a?
@@ -34,20 +36,42 @@
                 </p>
             </section>
 
-            <section class="projetos">
-                <h2>Projetos</h2>
-                <article>
-                    <h3>Projeto 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consectetur distinctio delectus sint expedita repellendus velit totam, commodi neque obcaecati ipsum dolorum, veniam accusantium facere soluta dolor provident ea sequi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, voluptatem consequuntur eveniet amet totam cupiditate. Recusandae blanditiis eos error culpa fugit. Beatae quasi provident accusamus harum cum libero qui distinctio. Lore</p>
-                </article>
-                <article>
-                    <h3>Projeto 2</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis iure eligendi assumenda ratione, voluptatibus exercitationem ab dolorem dignissimos illum rem in omnis molestiae fugiat? Cum voluptatibus perspiciatis quisquam aperiam sed.</p>
-                </article>
-            </section>
+
+                <section  id="projetos" class="projetos">
+                    <h2>Projetos</h2>
+
+
+                        <article>
+                            <h3>Projeto 1</h3>
+                            <figure>
+                                <img class="p1" src="images/projeto1.jpg" alt="imagem do projeto">
+                                <figcaption>Clone do Instragram:</figcaption>
+                            </figure>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consectetur distinctio delectus sint expedita repellendus velit totam, commodi neque obcaecati ipsum dolorum, veniam accusantium facere soluta dolor provident ea sequi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, voluptatem consequuntur eveniet amet totam cupiditate. Recusandae blanditiis eos error culpa fugit. Beatae quasi provident accusamus harum cum libero qui distinctio. Lore</p>
+                        </article>
+
+                    <article>
+                        <h3>Projeto 2</h3>
+                        <figure>
+                            <img class="p2" src="images/projeto2.png" alt="imagem projeto 2">
+                            <figcaption>Site de portifólio:</figcaption>
+                        </figure>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis iure eligendi assumenda ratione, voluptatibus exercitationem ab dolorem dignissimos illum rem in omnis molestiae fugiat? Cum voluptatibus perspiciatis quisquam aperiam sed.</p>
+                    </article>
+
+                </section>
+
+                    
+                <section class="curiosidade">
+                    <aside>
+                        <h2>Curisidades sobre mim</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit cumque sapiente eligendi, hic dolorem, molestias quia voluptatum provident voluptatibus inventore alias deserunt vero neque velit at, mollitia asperiores non libero! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio distinctio, eveniet magni aliquam, ducimus tempora nam deleniti quo id earum amet cumque numquam expedita dolorem. Dolorem autem dicta consequatur! Nam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod corrupti nam repellat ea reprehenderit modi omnis, itaque sint id eaque odio repudiandae, error eius beatae explicabo mollitia eligendi eveniet pariatur?</p>
+                    </aside>
+                </section>
+
         </main>
 
-           <section class="contato">
+           <section id="contato" class="contato">
                 <form action="" method="post">
 
                     <label for="nome">Nome:</label>
@@ -74,13 +98,41 @@
             </footer>
         </div>
     </div>
+
+    <button class="topoBtn" id="topoBtn" title="Voltar ao topo" aria-label="Volta para o top">↑</button>
     
     <script>
         document.querySelector("form").addEventListener("submit", function(event) {
             event.preventDefault(); // impede que o formulário seja enviado de verdade (sem recarregar a página)
             alert("Mensagem enviada com sucesso!"); //exibe a mensagem que você quiser.
         });
-    </script>
 
+        
+
+        window.addEventListener("scroll", function() {
+            const btn = document.getElementById("topoBtn");
+            if(window.scrollY > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        });
+
+        document.getElementById("topoBtn").addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        document.querySelectorAll('.scroll-link').forEach(link =>{
+            link.addEventListener('click', function (event) {
+                event.preventDefault(); //impede o comportamento padrão de pular direto
+
+                const id = this.getAttribute('href'); //pega o valor do href(ex:"#sobre")
+                const section = document.querySelector(id); //Seleciona a seção com aquele id
+
+                section.scrollIntoView({ behavior: "smooth"});
+            });
+        });
+
+    </script>
 </body>
 </html>
